@@ -1,0 +1,11 @@
+start mongodb by sudo service mongod start
+start spark by /home/hdoop/spark/spark-3.4.3-bin-hadoop3/sbin/start-all.sh
+run phase1 code by python3 phase1.py
+run phase 2 code by spark-submit --packages org.mongodb.spark:mongo-spark-connector_2.12:3.0.0 phase2.py
+
+now for phase3
+open kafka directory
+start zookeper by bin/zookeeper-server-start.sh config/zookeeper.properties
+start server by bin/kafka-server-start.sh config/server.properties
+createtopic by bin/kafka-topics.sh --create --topic user_activity --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1
+
